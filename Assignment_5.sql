@@ -1,127 +1,123 @@
 -- 1. Display first name and last name after converting the first letter of each name to
 -- upper case and the rest to lower case.
-SELECT 
-   CONCAT(
-    UPPER(SUBSTRING(FIRST_NAME, 1,1)),
-    LOWER(SUBSTRING(FIRST_NAME, 2))
-   ) AS formatted_first_name,
-   CONCAT(
-    UPPER(SUBSTRING(LAST_NAME, 1,1)),
-    LOWER(SUBSTRING(LAST_NAME, 2))
-   )AS formatted_last_name
-   FROM employees;
 
-+----------------------+---------------------+
-| formatted_first_name | formatted_last_name |
-+----------------------+---------------------+
-| Ellen                | Abel                |
-| Sundar               | Ande                |
-| Mozhe                | Atkinson            |
-| David                | Austin              |
-| Hermann              | Baer                |
-| Shelli               | Baida               |
-| Amit                 | Banda               |
-| Elizabeth            | Bates               |
-| Sarah                | Bell                |
-| David                | Bernstein           |
-| Laura                | Bissot              |
-| Harrison             | Bloom               |
-| Alexis               | Bull                |
-| Anthony              | Cabrio              |
-| Gerald               | Cambrault           |
-| Nanette              | Cambrault           |
-| John                 | Chen                |
-| Kelly                | Chung               |
-| Karen                | Colmenares          |
-| Curtis               | Davies              |
-| Lex                  | De haan             |
-| Julia                | Dellinger           |
-| Jennifer             | Dilly               |
-| Louise               | Doran               |
-| Bruce                | Ernst               |
-| Alberto              | Errazuriz           |
-| Britney              | Everett             |
-| Daniel               | Faviet              |
-| Pat                  | Fay                 |
-| Kevin                | Feeney              |
-| Jean                 | Fleaur              |
-| Tayler               | Fox                 |
-| Adam                 | Fripp               |
-| Timothy              | Gates               |
-| Ki                   | Gee                 |
-| Girard               | Geoni               |
-| William              | Gietz               |
-| Douglas              | Grant               |
-| Kimberely            | Grant               |
-| Nancy                | Greenberg           |
-| Danielle             | Greene              |
-| Peter                | Hall                |
-| Michael              | Hartstein           |
-| Shelley              | Higgins             |
-| Guy                  | Himuro              |
-| Alexander            | Hunold              |
-| Alyssa               | Hutton              |
-| Charles              | Johnson             |
-| Vance                | Jones               |
-| Payam                | Kaufling            |
-| Alexander            | Khoo                |
-| Janette              | King                |
-| Steven               | King                |
-| Neena                | Kochhar             |
-| Sundita              | Kumar               |
-| Renske               | Ladwig              |
-| James                | Landry              |
-| David                | Lee                 |
-| Jack                 | Livingston          |
-| Diana                | Lorentz             |
-| Jason                | Mallin              |
-| Steven               | Markle              |
-| James                | Marlow              |
-| Mattea               | Marvins             |
-| Randall              | Matos               |
-| Susan                | Mavris              |
-| Samuel               | Mccain              |
-| Allan                | Mcewen              |
-| Irene                | Mikkilineni         |
-| Kevin                | Mourgos             |
-| Julia                | Nayer               |
-| Donald               | Oconnell            |
-| Christopher          | Olsen               |
-| Tj                   | Olson               |
-| Lisa                 | Ozer                |
-| Karen                | Partners            |
-| Valli                | Pataballa           |
-| Joshua               | Patel               |
-| Randall              | Perkins             |
-| Hazel                | Philtanker          |
-| Luis                 | Popp                |
-| Trenna               | Rajs                |
-| Den                  | Raphaely            |
-| Michael              | Rogers              |
-| John                 | Russell             |
-| Nandita              | Sarchand            |
-| Ismael               | Sciarra             |
-| John                 | Seo                 |
-| Sarath               | Sewall              |
-| Lindsey              | Smith               |
-| William              | Smith               |
-| Stephen              | Stiles              |
-| Martha               | Sullivan            |
-| Patrick              | Sully               |
-| Jonathon             | Taylor              |
-| Winston              | Taylor              |
-| Sigal                | Tobias              |
-| Peter                | Tucker              |
-| Oliver               | Tuvault             |
-| Jose manuel          | Urman               |
-| Peter                | Vargas              |
-| Clara                | Vishney             |
-| Shanta               | Vollman             |
-| Alana                | Walsh               |
-| Matthew              | Weiss               |
-| Jennifer             | Whalen              |
-| Eleni                | Zlotkey             |
-+----------------------+---------------------+
+
+select concat(concat(upper(substring(first_name,1,1)),lower(substring(first_name,2))),
+       " ",
+       concat(upper(substring(last_name,1,1)),lower(substring(last_name,2)))) as name 
+from employees;
++-------------------+
+| name              |
++-------------------+
+| Ellen Abel        |
+| Sundar Ande       |
+| Mozhe Atkinson    |
+| David Austin      |
+| Hermann Baer      |
+| Shelli Baida      |
+| Amit Banda        |
+| Elizabeth Bates   |
+| Sarah Bell        |
+| David Bernstein   |
+| Laura Bissot      |
+| Harrison Bloom    |
+| Alexis Bull       |
+| Anthony Cabrio    |
+| Gerald Cambrault  |
+| Nanette Cambrault |
+| John Chen         |
+| Kelly Chung       |
+| Karen Colmenares  |
+| Curtis Davies     |
+| Lex De haan       |
+| Julia Dellinger   |
+| Jennifer Dilly    |
+| Louise Doran      |
+| Bruce Ernst       |
+| Alberto Errazuriz |
+| Britney Everett   |
+| Daniel Faviet     |
+| Pat Fay           |
+| Kevin Feeney      |
+| Jean Fleaur       |
+| Tayler Fox        |
+| Adam Fripp        |
+| Timothy Gates     |
+| Ki Gee            |
+| Girard Geoni      |
+| William Gietz     |
+| Douglas Grant     |
+| Kimberely Grant   |
+| Nancy Greenberg   |
+| Danielle Greene   |
+| Peter Hall        |
+| Michael Hartstein |
+| Shelley Higgins   |
+| Guy Himuro        |
+| Alexander Hunold  |
+| Alyssa Hutton     |
+| Charles Johnson   |
+| Vance Jones       |
+| Payam Kaufling    |
+| Alexander Khoo    |
+| Janette King      |
+| Steven King       |
+| Neena Kochhar     |
+| Sundita Kumar     |
+| Renske Ladwig     |
+| James Landry      |
+| David Lee         |
+| Jack Livingston   |
+| Diana Lorentz     |
+| Jason Mallin      |
+| Steven Markle     |
+| James Marlow      |
+| Mattea Marvins    |
+| Randall Matos     |
+| Susan Mavris      |
+| Samuel Mccain     |
+| Allan Mcewen      |
+| Irene Mikkilineni |
+| Kevin Mourgos     |
+| Julia Nayer       |
+| Donald Oconnell   |
+| Christopher Olsen |
+| Tj Olson          |
+| Lisa Ozer         |
+| Karen Partners    |
+| Valli Pataballa   |
+| Joshua Patel      |
+| Randall Perkins   |
+| Hazel Philtanker  |
+| Luis Popp         |
+| Trenna Rajs       |
+| Den Raphaely      |
+| Michael Rogers    |
+| John Russell      |
+| Nandita Sarchand  |
+| Ismael Sciarra    |
+| John Seo          |
+| Sarath Sewall     |
+| Lindsey Smith     |
+| William Smith     |
+| Stephen Stiles    |
+| Martha Sullivan   |
+| Patrick Sully     |
+| Jonathon Taylor   |
+| Winston Taylor    |
+| Sigal Tobias      |
+| Peter Tucker      |
+| Oliver Tuvault    |
+| Jose manuel Urman |
+| Peter Vargas      |
+| Clara Vishney     |
+| Shanta Vollman    |
+| Alana Walsh       |
+| Matthew Weiss     |
+| Jennifer Whalen   |
+| Eleni Zlotkey     |
++-------------------+
+107 rows in set (0.00 sec)
 
 -- 2. Display the first word in job title.
     SELECT 
@@ -129,7 +125,7 @@ SELECT
     AS first_word
     FROM jobs;
 
-    +----------------+
++----------------+
 | first_word     |
 +----------------+
 | President      |

@@ -321,24 +321,10 @@ HAVING
 
 -- 9. Display job ID of jobs that were done by more than 3 employees for more than 100
 -- days.
-SELECT JOB_ID
-FROM employees
-WHERE (DATEDIFF(CURDATE(), HIRE_DATE)) > 100
-GROUP BY JOB_ID
-HAVING COUNT(*) > 3;
 
-+------------+
-| JOB_ID     |
-+------------+
-| FI_ACCOUNT |
-| IT_PROG    |
-| PU_CLERK   |
-| SA_MAN     |
-| SA_REP     |
-| SH_CLERK   |
-| ST_CLERK   |
-| ST_MAN     |
-+------------+
+SELECT JON_ID,COUNT(EMPLOYEE_ID) from job_history WHERE(datediff(ENDDATE , STARTDATE)) > 100 GROUP BY JOB_ID HAVING count(*)>3
+
+Empty set (0.00 sec)
 
 -- 10. Display department ID, year, and Number of employees joined.
 
